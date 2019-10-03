@@ -1,0 +1,82 @@
+package com.All;
+
+import java.util.Calendar;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CalendarHandling {
+	
+	    static  int Currentday= 0, Currentmonth=0, Currentyear=0;
+	    static  int Targetday=0, Targetmonth=0, Targetyear=0;
+	    
+	    static String date = "23/11/2019";
+	    static boolean increment =true;
+	     
+	
+	public static void getCurrentdayMonthyear()
+	{
+		Calendar cal = Calendar.getInstance();
+		Currentday = cal.get(Calendar.DAY_OF_MONTH);
+		Currentmonth=cal.get(Calendar.MONTH)+1;
+		Currentyear=cal.get(Calendar.YEAR);
+		System.out.println(Currentday +"   " + Currentmonth  +"    "+  Currentyear);
+		
+	}
+	
+	public static void getTargetdayMonthyear()
+	{
+		String str[] = date.split("/");
+		Targetday = Integer.parseInt(str[0]);
+		Targetmonth = Integer.parseInt(str[1]);
+		Targetyear = Integer.parseInt(str[2]);
+		System.out.println(Targetday +"   " + Targetmonth  +"    "+  Targetyear);
+		
+	}
+	public  static void HowManyMonth()
+	{
+		if((Targetmonth-Currentmonth)>0)
+		{
+			int differenceMonths =Targetmonth-Currentmonth;
+			System.out.println(differenceMonths);
+			
+		}
+		else
+		{
+			
+			int differenceMonths =Currentmonth -Targetmonth;
+ 			System.out.println(differenceMonths);
+			increment=false;
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * System.setProperty("webdriver.chrome.driver",
+		 * "C:\\Users\\pranav kanchan\\Downloads\\WebDriver JARFiles\\chromedriver.exe"
+		 * ); WebDriver driver = new ChromeDriver();
+		 * driver.get("https://www.path2usa.com/travel-companions");
+		 * driver.manage().window().maximize(); //
+		 * driver.switchTo().frame("sumome-jquery-iframe");
+		 * driver.findElement(By.xpath("//input[@id='travel_date']")).click();
+		 */
+		CalendarHandling.getCurrentdayMonthyear();
+		CalendarHandling.getTargetdayMonthyear();
+		CalendarHandling.HowManyMonth();
+		System.out.println(increment);
+		
+		
+		
+		
+        
+       
+        		
+
+	}
+
+}

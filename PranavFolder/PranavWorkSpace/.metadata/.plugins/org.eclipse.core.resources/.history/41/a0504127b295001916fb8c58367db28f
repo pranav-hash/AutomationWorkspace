@@ -1,0 +1,27 @@
+package com.All;
+
+public class CalendarFeasibleCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		String TD = "23/11/2019";
+		String []TargetDate= TD.split("/");
+		String Day =  TargetDate[0];
+		System.out.println(Day);
+		
+		String AllMonth[] = {"", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+				
+		
+		String Month = AllMonth[Integer.parseInt(TargetDate[1])];
+		System.out.println(Month);
+		
+		
+		
+		
+
+	}
+
+}

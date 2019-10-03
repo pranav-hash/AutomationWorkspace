@@ -1,0 +1,88 @@
+package com.All;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CalendarFeasibleCode {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\pranav kanchan\\Downloads\\WebDriver JARFiles\\chromedriver.exe");
+	        WebDriver driver = new ChromeDriver();
+	        driver.get("https://www.phptravels.net/");
+	        driver.manage().window().maximize();
+	        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		
+		
+		String TD = "23/11/2019";
+		String []TargetDate= TD.split("/");
+		int Day = Integer.parseInt(TargetDate[0]);
+		System.out.println(Day);
+		
+		String AllMonth[] = {"", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+				
+		
+		String Month = AllMonth[Integer.parseInt(TargetDate[1])];
+		System.out.println(Month);
+		String Year = TargetDate[2];
+		String MonthYear =Month+" "+Year;
+		System.out.println(MonthYear);
+		
+		
+		
+		driver.findElement(By.xpath("//input[@name='checkin']")).click();
+		
+		while(!driver.findElement(By.xpath("(//div[@class='datepicker-days']//th[2])[1]")).equals(MonthYear))
+		{
+			
+			driver.findElement(By.xpath("(//div[@class='datepicker-days']//th[3])[1]")).click();
+			
+		}
+		
+		   int dayClick = driver.findElements(By.xpath("//div[@class='datepicker-days']//tr//td")).size();
+		   
+		   for(int i=0; i<=dayClick;i++)
+		   {
+			 String getday =  driver.findElements(By.xpath("//div[@class='datepicker-days']//tr//td")).get(i).getText();
+			 
+			    if(getday.equalsIgnoreCase(String.valueOf(Day)))
+			    		{
+			    	driver.findElements(By.xpath("//div[@class='datepicker-days']//tr//td")).get(i).click();
+			    	
+			    		}
+			   
+		   }
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

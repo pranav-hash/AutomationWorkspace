@@ -1,0 +1,20 @@
+package com.sikuli;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sikuli {
+	
+	public void sikuliTest()
+	{
+		String ChromeexePath= System.getProperty("user.dir")+"JarFiles\\chrome\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", ChromeexePath);
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://demo.guru99.com/test/image_upload/index.php");
+		
+	}
+	
+	
+	
+
+}

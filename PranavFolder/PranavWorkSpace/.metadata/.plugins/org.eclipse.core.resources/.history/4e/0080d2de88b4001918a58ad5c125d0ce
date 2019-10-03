@@ -1,0 +1,33 @@
+package Enapsulation;
+
+import java.util.HashMap;
+
+public class Occurences {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str ="Pranav";
+		HashMap<Character, Integer> HMap = new HashMap<Character, Integer>();
+		    for (char  c : str.toCharArray())
+		    {
+		    	if(HMap.containsKey(c))
+		    	{
+		    		int val = HMap.get(c);
+		    	    HMap.put(c, val+1);
+		    			
+		    	}
+		    	else
+		    	{
+		    		
+		    		HMap.put(c, 1);
+		    	}
+		    		
+		    	
+		    }
+		    System.out.println(HMap);
+		
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.sikuli;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sikuli {
+	
+	public void sikuliTest()
+	{
+		String ChromeexePath= System.getProperty("user.dir")+"JarFiles\\chrome\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", ChromeexePath);
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://demo.guru99.com/test/image_upload/index.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("photoimg")).sendKeys("C:\\Users\\pranav kanchan\\Desktop\\Ecowise Proposal_GrandVeniceMall_GreaterNoida_Jul'18_2.pdf");
+		
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,22 @@
+package com.All;
+
+public class CalendarFeasibleCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		String TD = "23/11/2019";
+		String []TargetDate= TD.split("/");
+		String Day =  TargetDate[0];
+		System.out.println(Day);
+		
+		
+		
+		
+		
+
+	}
+
+}

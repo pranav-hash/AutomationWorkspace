@@ -1,0 +1,27 @@
+package com.All;
+
+public class Swap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		  String a ="Bangalore"; String b="Delhi";
+		  
+		  System.out.println("Before Swap" + " " + a +" "+b); 
+		  a= a + b;
+		  //BangaloreDelhi System.out.println(a); System.out.println(a.length() + " "+
+		  b.length(); // (14 -5 )=9 System.out.println(a.length() - b.length()); //9
+		  b= a.substring(0, a.length() - b.length()); // 0 --- 9 System.out.println(b);
+		  // bangalore a = a.substring(b.length()); System.out.println(a);
+		  a=a.substring(a.length()); 
+		  System.out.println(b +" "+a);
+		 
+
+		
+		/*
+		 * int x =10; Object y =x; y=20; System.out.println(x); System.out.println(y);
+		 */
+	}
+
+}

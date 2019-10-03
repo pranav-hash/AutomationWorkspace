@@ -1,0 +1,55 @@
+package PageFactory;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class LoginPage {
+	
+	WebDriver Driver;
+	
+	@FindBy(xpath = "//div[@class='logo']//img[1]")
+	WebElement find_logotext;
+	@FindBy(xpath = "//input[@name='uid']")
+	WebElement find_Username;
+	
+	@FindBy(xpath="//input[@name='password']")
+	WebElement find_Password;
+	
+	@FindBy(xpath="//input[@name='btnLogin']")
+	WebElement find_Login;
+	
+	public LoginPage(WebDriver driver) 
+	{
+		
+		Driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	public void logo_txt()
+	{
+		System.out.println(find_logotext.getText());
+	}
+	public void login_UN()
+	{
+		find_Username.sendKeys("mgr123");
+		
+	}
+	public void login_Pwd()
+	{
+		find_Password.sendKeys("mgr!23");
+	}
+	
+	public void login_Click()
+	{
+		find_Login.click();
+	}
+	
+	
+		
+		
+		
+	}
+
+

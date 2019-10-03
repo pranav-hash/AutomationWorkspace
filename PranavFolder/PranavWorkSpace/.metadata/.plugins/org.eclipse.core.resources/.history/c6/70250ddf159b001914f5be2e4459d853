@@ -1,0 +1,38 @@
+package PageFactory;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import PageFactory.LoginPage;
+
+public class MainCallingClass {
+	
+	
+	WebDriver driver;
+	@BeforeTest
+	public void setup()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pranav kanchan\\Downloads\\WebDriver JARFiles\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.get("http://demo.guru99.com/v4/");
+        driver.manage().window().maximize();
+      
+	}
+	@Test (priority=0)
+	public void test_Verify_Guru99()
+	{
+		LoginPage obj =  PageFactory.initElements(driver, LoginPage.class);;
+		obj.logo_txt();
+	    obj.login_UN();
+	    obj.login_Pwd();
+	    obj.login_Click();
+		
+	}
+
+}
